@@ -1,0 +1,39 @@
+# Disable Quarkus Dev Services
+quarkus.devservices.enabled=false
+
+# HTTP/HTTPS Port
+quarkus.http.port=8081
+
+# Database Config
+quarkus.datasource.db-kind=postgresql
+quarkus.datasource.username=bob
+quarkus.datasource.password=bob
+quarkus.datasource.reactive.url=vertx-reactive:postgresql://localhost:5432/smartbarbo
+quarkus.datasource.devservices.enabled=false
+
+# Hibernate - recreate schema and load import.sql on startup
+quarkus.hibernate-orm.database.generation=drop-and-create
+quarkus.hibernate-orm.sql-load-script=import.sql
+
+# OpenAPI and Swagger
+quarkus.swagger-ui.always-include=true
+quarkus.swagger-ui.path=/swagger-ui
+quarkus.smallrye-openapi.path=/openapi
+
+# Basic Auth
+quarkus.http.auth.basic=true
+
+# SSL/TLS Settings
+quarkus.http.ssl.certificate.key-store-file=smartbarbo.p12
+quarkus.http.ssl.certificate.key-store-file-type=PKCS12
+quarkus.http.ssl.certificate.key-store-password=${quarkus.http.ssl.certificate.key-store-password}
+
+quarkus.http.ssl.certificate.trust-store-file=sbotrust.p12
+quarkus.http.ssl.certificate.trust-store-file-type=PKCS12
+quarkus.http.ssl.certificate.trust-store-password=${quarkus.http.ssl.certificate.trust-store-password}
+
+# Require mTLS
+quarkus.http.ssl.client-auth=required
+
+# Redirect HTTP to HTTPS (complete property)
+quarkus.http.insecure-requests=redirect

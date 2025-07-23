@@ -1,0 +1,39 @@
+quarkus:
+  devservices:
+    enabled: false
+
+  http:
+    port: 8081
+    auth:
+      basic: true
+    ssl:
+      certificate:
+        key-store-file: smartbarbo.p12
+        key-store-file-type: PKCS12
+        key-store-password: ${quarkus.http.ssl.certificate.key-store-password}
+        trust-store-file: sbotrust.p12
+        trust-store-file-type: PKCS12
+        trust-store-password: ${quarkus.http.ssl.certificate.trust-store-password}
+      client-auth: required
+    insecure-requests: redirect
+
+  datasource:
+    db-kind: postgresql
+    username: bob
+    password: bob
+    reactive:
+      url: vertx-reactive:postgresql://localhost:5432/smartbarbo
+    devservices:
+      enabled: false
+
+  hibernate-orm:
+    database:
+      generation: drop-and-create
+    sql-load-script: import.sql
+
+  swagger-ui:
+    always-include: true
+    path: /swagger-ui
+
+  smallrye-openapi:
+    path: /openapi

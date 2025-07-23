@@ -1,0 +1,3 @@
+apis:
+  smartbar-backoffice/src/main/resources/openapi/backoffice-openapi.yaml:
+    alias: "smarbar-backoffice-ap"

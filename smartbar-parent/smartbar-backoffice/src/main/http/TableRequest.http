@@ -1,0 +1,30 @@
+### create new
+POST {{url}}//tables
+Content-Type: application/json
+
+{
+  "seatCount": 4,
+  "name": "Stockhollkm1",
+  "seatCount": 10,
+  "active": false
+}
+
+### modify
+
+PUT {{url}}/tables/1
+Content-Type: application/json
+
+{
+    "name": "cost-rice",
+    "seatCount": 300,
+    "active": false
+}
+
+### Get ALl
+GET {{url}}/tables
+
+### Get single
+GET {{url}}/tables/1
+
+### Delete
+DELETE {{url}}/tables/3

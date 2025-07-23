@@ -1,0 +1,66 @@
+### create new
+POST {{url}}//articles
+x-category-id: 1
+Content-Type: application/json
+
+{
+  "name": "Merlot",
+  "description": "a tasty red wine, try it!",
+  "price": 5.20,
+  "picture": "abcd"
+}
+
+### modify
+
+PUT {{url}}/articles/3
+Content-Type: application/json
+
+{
+  "name": "Merlot",
+  "description": "a tasty red wine, try it!",
+  "price": 5.30,
+  "picture": "abcd"
+}
+
+### Get ALl
+GET {{url}}/articles
+#Authorization: Basic YWxpY2U6YWxpY2U=
+Authorization: Basic Ym9iOmJvYg==
+#Authorization: Basic YWhheWVrOmFoYXllaw==
+
+### Get ALl with hal
+GET {{url}}/articles
+Accept: application/hal+json
+
+### Get ALl with Size
+GET {{url}}/articles?size=2
+
+### Get single
+GET {{url}}/articles/3
+
+### Delete
+DELETE {{url}}/articles/3
+
+### Get by category
+GET {{url}}/articles/category/1001
+
+### Get by category Using Find
+GET {{url}}/articles/categoryUsingFind/1001
+
+### Get By Category Sorting
+GET {{url}}/articles/categorySorting/1001
+
+### Get By Category Sorting
+GET {{url}}/articles/categorySortingAndPaging/1001
+
+### Get By Category Named
+GET {{url}}/articles/categoryNamed/1001
+
+### CountMore actions
+GET {{url}}/articles/count
+
+### Get By Name Query Directly
+GET {{url}}/articles?namedQuery=Article.ByCategoryId&id=1001&size=2
+
+### Get By Names
+GET {{url}}/articles/name?s=er
