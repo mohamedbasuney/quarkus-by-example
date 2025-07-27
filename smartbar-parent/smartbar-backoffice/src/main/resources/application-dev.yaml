@@ -1,11 +1,8 @@
 quarkus:
   devservices:
     enabled: false
-
   http:
     port: 8081
-    auth:
-      basic: true
   datasource:
     db-kind: postgresql
     username: bob
@@ -26,3 +23,15 @@ quarkus:
 
   smallrye-openapi:
     path: /openapi
+  oidc:
+    auth-server-url: http://localhost:8181/realms/sbo
+    client-id: smartbar-backoffice
+    application-type: web-app
+    credentials:
+      secret: tcdzsLyzdGAcSoeWtPZUlwRCWayvSa4s
+    tls:
+      verification: none
+    token-state-manager:
+      split-tokens: true
+    roles:
+      source: accesstoken

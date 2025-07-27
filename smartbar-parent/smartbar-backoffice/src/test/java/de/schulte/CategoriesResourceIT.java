@@ -1,7 +1,7 @@
 /*
 package de.schulte;
 
-import de.schulte.smartbar.backoffice.api.CategoriesResourceTest;
+import de.schulte.smartbar.backoffice.api.;
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
 @QuarkusIntegrationTest
