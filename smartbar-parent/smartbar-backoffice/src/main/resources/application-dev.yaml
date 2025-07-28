@@ -26,9 +26,7 @@ quarkus:
   oidc:
     auth-server-url: http://localhost:8181/realms/sbo
     client-id: smartbar-backoffice
-    application-type: web-app
-    credentials:
-      secret: tcdzsLyzdGAcSoeWtPZUlwRCWayvSa4s
+    application-type: hybrid
     tls:
       verification: none
     token-state-manager:
